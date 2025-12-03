@@ -11,6 +11,7 @@
 !zepu_worker.exe
 
 # Ignore build artifacts and system files
+build_extension.py
 build/
 dist/
 __pycache__/
