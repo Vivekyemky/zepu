@@ -1,0 +1,20 @@
+# Ignore C Source Code (Keep this private!)
+*.c
+*.h
+*.o
+*.obj
+
+# But allow the compiled binaries (So people can use it)
+!zepu_engine.dll
+!libzepu_engine.so
+!zepu_worker
+!zepu_worker.exe
+
+# Ignore build artifacts and system files
+build/
+dist/
+__pycache__/
+*.egg-info/
+.venv/
+.vscode/
+*.pyc

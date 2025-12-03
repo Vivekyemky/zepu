@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  # The Hive Workers (10 Nodes)
+  node1: &worker
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: zepu-worker
+    networks:
+      - vcpu-net
+  node2: *worker
+  node3: *worker
+  node4: *worker
+  node5: *worker
+  node6: *worker
+  node7: *worker
+  node8: *worker
+  node9: *worker
+  node10: *worker
+
+  # The Client (Runs the Test)
+  client:
+    image: python:3.9-slim
+    volumes:
+      - ../:/app/zepu
+      - ./docker_hive_test.py:/app/docker_hive_test.py
+    working_dir: /app
+    command: python docker_hive_test.py
+    depends_on:
+      - node1
+      - node2
+      - node3
+      - node4
+      - node5
+      - node6
+      - node7
+      - node8
+      - node9
+      - node10
+    networks:
+      - vcpu-net
+
+networks:
+  vcpu-net:
+    driver: bridge
