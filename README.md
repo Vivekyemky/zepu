@@ -116,6 +116,31 @@ docker-compose -f docker/docker-compose.yml up --build
 
 ---
 
+## 🔄 Usage Flow
+
+```mermaid
+graph TD
+    User[User] -->|1. Writes Code| Script[Python Script]
+    Script -->|2. Defines| Cluster[ZePU Cluster]
+    
+    subgraph "ZePU Runtime"
+        Cluster -->|3. Loads| Program[Instruction List]
+        Program -->|4. Dispatches| Engine{ZePU Engine}
+        
+        Engine -->|Scalar Task| vCPU[Local vCPU Core]
+        Engine -->|Matrix Task| GPU[Remote GPU Node]
+        Engine -->|Background Task| Worker[Networked Worker]
+    end
+    
+    vCPU -->|Result| Aggregator[Result Aggregator]
+    GPU -->|Result| Aggregator
+    Worker -->|Result| Aggregator
+    
+    Aggregator -->|5. Returns| Telemetry[Telemetry & Output]
+```
+
+---
+
 ## 📦 Project Structure
 
 | Directory | Description |
