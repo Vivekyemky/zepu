@@ -3,7 +3,7 @@
 **Democratizing High-Performance Computing for the AI Era.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-blue)](https://github.com/Vivekyemky/IMC4)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-blue)](https://github.com/Vivekyemky/zepu)
 
 ---
 
