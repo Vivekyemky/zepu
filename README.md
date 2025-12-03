@@ -46,6 +46,20 @@ Run your baseline workload on local hardware. When demand spikes, spin up cloud 
 
 ---
 
+## 🎯 Who is this for?
+
+ZePU is built for applications involving **many parallel, independent tasks** running on **unreliable or mixed hardware**.
+
+| Application Type | How ZePU Helps |
+| :--- | :--- |
+| **Distributed AI & ML** | **Federated Learning & Hyperparameter Tuning.** Train models across edge devices without centralizing data. Run hundreds of model variations simultaneously to find the best architecture. |
+| **Scientific Computing** | **Monte Carlo Simulations.** Perfect for financial modeling or physics simulations that require running millions of random scenarios ("embarrassingly parallel" tasks). |
+| **Edge & IoT** | **Sensor Fusion.** Aggregate data from hundreds of factory sensors or a drone swarm. Process data locally on the edge to reduce bandwidth before sending insights to the cloud. |
+| **Batch Processing** | **Media Transcoding & Rendering.** Split video conversion or 3D rendering tasks across idle office computers overnight, turning your office into a render farm. |
+| **Cloud Cost Optimization** | **Spot Instance Workloads.** Run long computations on cheap AWS/Azure Spot Instances. If an instance is killed, ZePU automatically re-queues the task to a surviving node. |
+
+---
+
 ## 🛠️ Architecture
 
 *   **ZePU Engine (`zepu_engine.dll` / `.so`)**: The core C runtime. Extremely small footprint (<500KB).
